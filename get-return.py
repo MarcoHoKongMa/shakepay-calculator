@@ -6,5 +6,9 @@ if len(sys.argv) < 2:
   exit(1)
 df = pd.read_csv(sys.argv[1])
 
-reward = round(df[df['Type'] == "Reward"]['Book Cost'].sum(), 2)
-print(reward)
+# Filter Transaction Type
+reward = df[df['Type'] == "Reward"]
+
+# Calculate Gain/Loss
+reward_sum = round(reward['Book Cost'].sum(), 2)
+print(reward_sum)
