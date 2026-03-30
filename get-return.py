@@ -21,3 +21,7 @@ eth_buy_sum = round(eth_buy['Book Cost'].sum(), 2)
 btc_sell_sum = round(btc_sell['Book Cost'].sum(), 2)
 eth_sell_sum = round(eth_sell['Book Cost'].sum(), 2)
 reward_sum = round(reward['Book Cost'].sum(), 2)
+cashback_sum = round(reward[reward['Description'] == 'Bitcoin cashback']['Book Cost'].sum(), 2)
+
+# Summarize Results
+print(cashback_sum)
